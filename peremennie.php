@@ -10,7 +10,7 @@
     <?php
     $a=5;
     $a<<1;
-    echo "a";
+    echo $a;
     ?>
     
 </body>
