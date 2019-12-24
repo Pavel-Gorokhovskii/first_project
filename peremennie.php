@@ -26,6 +26,20 @@
     if (is_string($bool)) {
         echo "Строка: $bool";
     }
+    echo"<br>";
+    $a = 0123;
+    echo $a;
+    echo"<br>";
+    $b = 0x1A;
+    echo $b;
+    echo"<br>";
+    $b = 1.2e3;
+    echo $b;
+    echo "<br>";
+    $c = 7e-10;
+    $g = 7;
+    $h = $g + $c;
+    echo $h;
     ?>
     
 </body>
