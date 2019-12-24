@@ -7,12 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        p{
+        body {
             font-size: 48px;
             font-weight: bolder;
             text-align: center;
-        }
-        div{
             display: flex;
             justify-content: center;
         }
@@ -20,11 +18,9 @@
 </head>
 
 <body>
-    <div>
-        <p>
-            Hello World!!!
-        </p>
-    </div>
+    <?php
+    echo "Hello World!!!"
+    ?>
 </body>
 
 </html>
