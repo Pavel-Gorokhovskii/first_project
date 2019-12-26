@@ -33,3 +33,9 @@ it's anything
 [тег]: адрес://ссылки.здесь "Заголовок ссылки"
 
 ![Alt-текст](адрес://ссылки.здесь "Заголовок изображения")
+
+| Left-Aligned  | Center Aligned  | Right Aligned |
+|:------------- |:---------------:| -------------:|
+| col 3 is      | some wordy text |     **$1600** |
+| col 2 is      | centered        |         $12   |
+| zebra stripes | are neat        |        ~~$1~~ |
