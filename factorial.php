@@ -19,26 +19,22 @@
 
 <body>
     <?php
-    function maxx($arr)
+    function factorial($n)
     {
-        reset($arr);
-        $max = current($arr);
-        foreach ($arr as $v) {
-            if ($v > $max)
-                $max = $v;
+        $f = 1;
+        for ($i = 1; $i <= $n; $i++) {
+            $f = $f * $i;
         }
-        return $max;
+        return $f;
     }
-    echo maxx([357, 1003, 2000, 5, 4, 12, 10]);
+    echo factorial(0);
     echo "<br>";
-    echo maxx([-3570, -10030, -2000, -5000, -4000, -12000, -10000]);
+    echo factorial(1);
     echo "<br>";
-    echo maxx([0 => 1, 1 => 54, 2 => 2000, 3 => 5, 4 => 62, 5 => 137]);
+    echo factorial(2);
     echo "<br>";
-    echo maxx(["one" => 1, "two" => 2000, "three" => 65, "four" => 5]);
+    echo factorial(3);
     echo "<br>";
-    
     ?>
 </body>
-
 </html>

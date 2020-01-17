@@ -19,25 +19,25 @@
 
 <body>
     <?php
-    function maxx($arr)
+    function fk($n)
     {
-        reset($arr);
-        $max = current($arr);
-        foreach ($arr as $v) {
-            if ($v > $max)
-                $max = $v;
+        if ($n == 0) {
+            $f = 1;
+        } else {
+            $f = fk($n - 1) * $n;
         }
-        return $max;
+        return $f;
     }
-    echo maxx([357, 1003, 2000, 5, 4, 12, 10]);
+    echo fk(0);
     echo "<br>";
-    echo maxx([-3570, -10030, -2000, -5000, -4000, -12000, -10000]);
+    echo fk(1);
     echo "<br>";
-    echo maxx([0 => 1, 1 => 54, 2 => 2000, 3 => 5, 4 => 62, 5 => 137]);
+    echo fk(2);
     echo "<br>";
-    echo maxx(["one" => 1, "two" => 2000, "three" => 65, "four" => 5]);
+    echo fk(3);
     echo "<br>";
-    
+    echo fk(4);
+    echo "<br>";
     ?>
 </body>
 
