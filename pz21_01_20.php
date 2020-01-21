@@ -14,23 +14,10 @@
             justify-content: center;
         }
     </style>
-
 </head>
 
 <body>
-    <?php
-    function febonacci($n)
-    {
-        $f = [0, 1];
-        for ($i = 1; $i < $n; $i++) {
-            $f[] = $f[$i] + $f[$i - 1];
-        }
-        return $f;
-    }
-    echo "<pre>";
-    print_r(febonacci(25));
-    
-    ?>
+
 </body>
 
 </html>
