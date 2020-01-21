@@ -13,6 +13,15 @@
             display: flex;
             justify-content: center;
         }
+
+        table {
+            border: solid;
+            border-color: black;
+        }
+        td {
+            border: solid;
+            border-color: black;
+        }
     </style>
 
 </head>
