@@ -28,7 +28,7 @@
         return $f;
     }
     echo "<pre>";
-    print_r(febonacci(25));
+    print_r(febonacci(100));
     
     ?>
 </body>
