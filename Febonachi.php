@@ -21,22 +21,15 @@
     <?php
     function fibonacci($n)
     {
-        if ($n < 3) {
-            return 1;
-        } else {
-            return fibonacci($n - 1) + fibonacci($n - 2);
+        $f = [0, 1];
+        for ($i = 1; $i < $n; $i++) {
+            $f[] = $f[$i] + $f[$i - 1];
         }
+        return $f;
     }
-    echo fibonacci(25);
-    echo "<br>";
-    echo fibonacci(5);
-    echo "<br>";
-    echo fibonacci(10);
-    echo "<br>";
-    echo fibonacci(3);
-    echo "<br>";
-    echo fibonacci(1);
-    echo "<br>";
+    echo "<pre>";
+    print_r(fibonacci(25));
+    
     ?>
 </body>
 
