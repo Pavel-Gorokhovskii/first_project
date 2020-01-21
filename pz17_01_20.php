@@ -8,6 +8,7 @@
     <title>Document</title>
     <style>
         body {
+            margin-top: 100px;
             font-size: 48px;
             font-weight: bolder;
             display: flex;
@@ -15,12 +16,13 @@
         }
 
         table {
-            border: solid;
-            border-color: black;
+            border: 1px solid black;
+
         }
+
         td {
-            border: solid;
-            border-color: black;
+
+            border: 1px solid black;
         }
     </style>
 
