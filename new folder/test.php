@@ -14,12 +14,11 @@
             justify-content: center;
         }
     </style>
-
 </head>
 
 <body>
     <?php
-    $fileName = "counter.txt";
+    $fileName = "file.txt";
     if (file_exists($fileName)) {
         $num = file_get_contents($fileName);
         $num++;
@@ -32,6 +31,7 @@
         file_put_contents($fileName, $num);
     }
     echo "Вы обновили страницу {$num} раз(а).";
+
     ?>
 </body>
 
