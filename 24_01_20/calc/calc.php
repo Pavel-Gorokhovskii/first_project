@@ -18,8 +18,13 @@
 
 <body>
     <?php
-   echo $_POST['num1']*$_POST['num2'];
-   file_put_contents('calc.txt', $_POST['num1']*$_POST['num2']);
+    echo $_POST['num1'] * $_POST['num2'];
+    $a = $_POST['num1'];
+    $b = $_POST['num2'];
+    $c = $_POST['num1'] * $_POST['num2'];
+    $fp = fopen('calc.txt', 'a+');
+    fwrite($fp, "$a * $b = $c" . "\r\n");
+    fclose($fp);
     ?>
 </body>
 
