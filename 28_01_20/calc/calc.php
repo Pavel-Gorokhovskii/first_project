@@ -8,7 +8,7 @@
     <title>Document</title>
     <style>
         body {
-            font-size: 24px;
+            font-size: 48px;
             font-weight: bolder;
             display: flex;
             justify-content: center;
@@ -20,10 +20,25 @@
     <?php
     $a = $_POST['num1'];
     $b = $_POST['num2'];
-    $c = $a * $b;
-    echo "$a * $b = $c";
+    $s = $_POST['s'];
+    switch ($_POST['s']) {
+        case '-':
+            $c = $a - $b;
+            break;
+        case '*':
+            $c = $a * $b;
+            break;
+        case '/':
+            $c = $a / $b;
+            break;
+        case '+':
+        default:
+            $c = $a + $b;
+            break;
+    }
+    echo "$a $s $b = $c";
     $fp = fopen('calc.txt', 'a+');
-    fwrite($fp, "$a * $b = $c". "\r\n");
+    fwrite($fp, "$a $s $b = $c" . "\n");
     fclose($fp);
     ?>
 </body>

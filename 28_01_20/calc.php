@@ -20,10 +20,24 @@
     <?php
     $a = $_POST['num1'];
     $b = $_POST['num2'];
-    $c = $a * $b;
-    echo "$a * $b = $c";
+    switch ($_POST['s']) {
+        case 2:
+            $c = $a - $b;
+            break;
+        case 3:
+            $c = $a * $b;
+            break;
+        case 4:
+            $c = $a / $b;
+            break;
+        case 1:
+        default:
+            $c = $a + $b;
+            break;
+    }
+    echo "$c";
     $fp = fopen('calc.txt', 'a+');
-    fwrite($fp, "$a * $b = $c". "\r\n");
+    fwrite($fp, "$c" . "\r\n");
     fclose($fp);
     ?>
 </body>

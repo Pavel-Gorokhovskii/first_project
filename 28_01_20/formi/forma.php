@@ -18,13 +18,12 @@
 
 <body>
     <?php
-    $a = $_POST['num1'];
-    $b = $_POST['num2'];
-    $c = $a * $b;
-    echo "$a * $b = $c";
-    $fp = fopen('calc.txt', 'a+');
-    fwrite($fp, "$a * $b = $c". "\r\n");
-    fclose($fp);
+    $i = $_POST['voting'];
+    $arr = explode(';', file_get_contents('forma.txt'));
+    $arr[$i]++;
+    file_put_contents('forma.txt', implode(';',$arr));
+    print_r ($_POST);
+
     ?>
 </body>
 

@@ -18,12 +18,13 @@
 
 <body>
     <?php
-    $a = $_POST['num1'];
-    $b = $_POST['num2'];
-    $c = $a * $b;
-    echo "$a * $b = $c";
-    $fp = fopen('calc.txt', 'a+');
-    fwrite($fp, "$a * $b = $c". "\r\n");
+    $a = $_POST['Text'];
+    $b = $_POST['userName'];
+    echo "$a";
+    echo "<br>";
+    echo "$b";
+    $fp = fopen('data.csv', 'a+');
+    fwrite($fp, "$a ; $b" . "\n");
     fclose($fp);
     ?>
 </body>

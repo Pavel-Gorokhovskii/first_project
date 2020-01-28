@@ -8,7 +8,7 @@
     <title>Document</title>
     <style>
         body {
-            font-size: 24px;
+            font-size: 48px;
             font-weight: bolder;
             display: flex;
             justify-content: center;
@@ -17,15 +17,14 @@
 </head>
 
 <body>
-    <?php
-    $a = $_POST['num1'];
-    $b = $_POST['num2'];
-    $c = $a * $b;
-    echo "$a * $b = $c";
-    $fp = fopen('calc.txt', 'a+');
-    fwrite($fp, "$a * $b = $c". "\r\n");
-    fclose($fp);
-    ?>
+    <form action="oprosnik.php" method="POST">
+        <textarea type="text" name="Text"></textarea>
+        <br>
+        <input type="text" name="userName">
+        <br>
+        <input type="submit" value="OK">
+    </form>
+
 </body>
 
 </html>
