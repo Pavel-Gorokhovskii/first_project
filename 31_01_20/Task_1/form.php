@@ -8,7 +8,7 @@
     <title>Document</title>
     <style>
         body {
-            font-size: 48px;
+            font-size: 24px;
             font-weight: bolder;
             display: flex;
             flex-direction: column;
@@ -18,20 +18,20 @@
 </head>
 
 <body>
-    <div>
-        Понравилось ли Вам наше мероприятие?
-    </div>
-    <form action="forma.php" method="POST">
-        <br>
-        <input type="radio" name="voting" value="0">Да
-        <br>
-        <input type="radio" name="voting" value="1">Нет
-        <br>
-        <input type="radio" name="voting" value="2">Не определился
-        <br>
+    <form action="vot.php" method="POST">
+        <?php
+        $arr = file('votting.txt');
+        ?>
+        <h2><?= $arr[0] ?></h2>
+        <?php
+        for ($i = 1; $i < count($arr); $i++) {
+            $buf = explode(" - ", $arr[$i])[0];
+            echo "<label><input type='radio' name='voting' value='$i'>$buf</label><br> \n";
+        }
+
+        ?>
         <input type="submit" value="OK">
     </form>
-
 </body>
 
 </html>

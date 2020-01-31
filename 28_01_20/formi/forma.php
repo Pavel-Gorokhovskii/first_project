@@ -11,6 +11,7 @@
             font-size: 24px;
             font-weight: bolder;
             display: flex;
+            flex-direction: column;
             justify-content: center;
         }
     </style>
@@ -22,7 +23,10 @@
     $arr = explode(';', file_get_contents('forma.txt'));
     $arr[$i]++;
     file_put_contents('forma.txt', implode(';',$arr));
-    print_r ($_POST);
+    
+    foreach ($arr as $key => $value) {
+        echo "$key - $value<br>";
+    }
 
     ?>
 </body>
