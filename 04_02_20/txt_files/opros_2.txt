@@ -1,0 +1,4 @@
+Do you like PHP?
+Yes - 4
+No - 2
+I don't know - 2

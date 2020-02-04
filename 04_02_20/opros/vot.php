@@ -14,7 +14,7 @@
             border: 1px solid black;
             border-radius: 10px;
             justify-content: center;
-            width: 250px;
+            width: 500px;
             height: 250px;
             margin-left: 750px;
             padding-left: 10px;
@@ -37,12 +37,13 @@
 
 <body>
     <?php
+    include('config.php');
     $ind = $_POST['voting'];
-    $arr = file('votting.txt');
+    $arr = file($fileName);
     $buf = explode(" - ", $arr[$ind]);
     $buf[1] += 1;
     $arr[$ind] = implode(" - ", $buf) . "\n";
-    file_put_contents('votting.txt', $arr);
+    file_put_contents($fileName, $arr);
 
     $sum = 0;
     $array = array(1, 2);
