@@ -13,7 +13,7 @@
 <body>
     <div class="rectangle" style="width: <?= $_GET['a'] ?>; height: <?= $_GET['b'] ?>; background-color: <?= $_GET['background-color'] ?>"></div>
     <?php
-    print_r($_GET);
+
     $S = $_GET['a'] * $_GET['b'];
     echo '<br>';
     echo 'Площадь прямоугольника равна ', $S, 'px';
