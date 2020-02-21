@@ -16,11 +16,5 @@ while ($name = readdir($dir)) {
         print_r('<a href="upload/' . $name . '"download="">' . $name . '</a><br>');
 }
 closedir($dir);
-//Чтение файлов 
-$dir5 = opendir('upload/');
-for ($dir5; $name1 = readdir($dir5); $dir5++) {
-    if ($name1 == '.' or $name1 == '..')
-        continue;
-    print_r('<a href="upload/' . $name1 . '"download="">' . $name1 . '</a><br>');
-}
+
 ?>
