@@ -15,9 +15,10 @@ while ($name = readdir($dir)) {
                     break;
             }
             $f = round((filesize("upload/$name") / 1024) / 1024, 3);
-            echo "<a href='upload/$name'><img src = '$icon'> $name </a> $f  Mb  <a href='del.php?file=$name'><img src = 'notification-error_114458.png'></a><br>";
+            echo "<a href='upload/$name'><img src = '$icon'> $name </a> $f  Mb  <a href='del.php?file=$name'><img src = 'notification-error_114458.png'></a>
+            <form action='rename.php' method='POST'><input type='text' value=" . $name . " > <input class='submit' type='submit' value='rename'></form><br>";
         } else {
-            echo "<a href='upload/$name'><img src = 'season-7_115467.png'> $name </a> $f  Mb <a href='deldir.php?file=$name'><img src = 'notification-error_114458.png'></a><br>";
+            echo "<a href='upload/$name'><img src = 'season-7_115467.png'> $name </a> $f  Mb <a href='deldir.php?file=$name'><img src = 'notification-error_114458.png'></a> <a href='rename.php?file=$name'><img src = 'compose_icon_128484.png'></a><br>";
         }
     }
 }
