@@ -1,4 +1,3 @@
 <?php
-//rename($_POST['fileName'],  $_POST['fileName']);
-print_r($_POST[$name]);
-//header("Location: show.php");
+rename('upload/' . $_POST['oldname'],  'upload/' . $_POST['name'] . '.' . $_POST['ext']);
+header("Location: show.php");
