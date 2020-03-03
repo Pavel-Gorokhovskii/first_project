@@ -1,8 +1,6 @@
 <?php
-$text = $_POST['text'];
-$pat = file_get_contents('mat.txt');
-if (preg_match($pat, $text)) {
+if (preg_match(file_get_contents('mat.txt'), $_POST['text'])) {
     echo 'Вы используете ненормативную лексику';
 } else {
-    echo $text;
+    echo $_POST['text'];
 }
