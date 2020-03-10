@@ -1,0 +1,38 @@
+<xml>
+
+    <msg>
+        <text>Привет</text>
+        <name>Вася</name>
+        <date>10.03.2020 20:52:03</date>
+    </msg>
+    <msg>
+        <text>Я оставляю здесь свой отзыв</text>
+        <name>Петя</name>
+        <date>10.03.2020 20:52:15</date>
+    </msg>
+
+<msg>
+<text>теперь пишу с теггами &lt;text&gt; привет друг мой &lt;/text&gt;</text>
+<name>asd</name>
+<date>10.03.2020 20:56:34</date>
+</msg>
+<msg>
+<text>смайлы :-)</text>
+<name>Павел</name>
+<date>10.03.2020 21:06:37</date>
+</msg>
+<msg>
+<text>будет ли скрол?</text>
+<name>ыв</name>
+<date>10.03.2020 21:08:53</date>
+</msg>
+<msg>
+<text></text>
+<name></name>
+<date>10.03.2020 21:13:47</date>
+</msg>
+<msg>
+<text>валыроызав\фыдао</text>
+<name>ывфывфыв</name>
+<date>10.03.2020 21:14:17</date>
+</msg>
