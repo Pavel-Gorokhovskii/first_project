@@ -154,3 +154,64 @@ WHERE
   salespeople.snum = orders.snum
 Group by
   sname;
+-- найти фамилию продавца из Лондона с самыми маленькими комисионными
+Select
+  sname
+from salespeople
+where
+  city = 'London'
+  AND comm = (
+    Select
+      min(comm)
+    from salespeople
+    where
+      city = 'London'
+  );
+-- найти средний рейтинг покупателей в каждом городе
+Select
+  CITY,
+  avg(RATING)
+from customers
+GROUP BY
+  CITY;
+-- Объединяем таблицы
+Select
+  *
+from customers,
+  orders,
+  salespeople
+where
+  salespeople.snum = orders.snum
+  AND orders.cnum = customers.cnum;
+-- посчитать средний рейтинг покупателей для каждого продавца
+Select
+  SNAME,
+  avg(rating)
+from customers,
+  orders,
+  salespeople
+where
+  salespeople.snum = orders.snum
+  AND orders.cnum = customers.cnum
+GROUP BY
+  SNAME;
+-- Найти среднюю сумму заказов для каждого продавца на каждую дату
+Select
+  SNAME,
+  Odate,
+  avg(AMT),
+  count(*) AS 'Количество заказов'
+from orders,
+  salespeople
+where
+  salespeople.snum = orders.snum
+GROUP BY
+  SNAME,
+  ODATE;
+-- Среднюю сумму заказов на каждое число
+Select
+  Odate,
+  avg(AMT)
+from orders
+Group by
+  ODATE;
