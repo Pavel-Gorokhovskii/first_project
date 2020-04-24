@@ -1,6 +1,6 @@
 <?php
 
-class B extends Tag
+class B extends PairTag
 {
     public function html()
     {
