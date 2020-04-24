@@ -1,9 +1,9 @@
 <?php
 
-class B extends Specification
+class B extends Tag
 {
-    public function Description()
+    public function html()
     {
-        return "устанавливает жирное начертание текста";
+        return "<b>$this->innerText</b>";
     }
 }

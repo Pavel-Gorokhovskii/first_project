@@ -1,9 +1,9 @@
 <?php
 
-class I extends Specification
+class I extends Tag
 {
-    public function Description()
+    public function html()
     {
-        return "устанавливает курсивное начертание шрифта";
+        return "<u>$this->innerText</u>";
     }
 }

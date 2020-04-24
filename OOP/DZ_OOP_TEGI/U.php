@@ -1,9 +1,9 @@
 <?php
 
-class U extends Specification
+class U extends Tag
 {
-    public function Description()
+    public function html()
     {
-        return "добавляет почеркивание тексту";
+        return "<i>$this->innerText</i>";
     }
 }
