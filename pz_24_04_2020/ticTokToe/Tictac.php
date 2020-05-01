@@ -2,11 +2,16 @@
 
 class Tictac
 {
-    public $map = [];
+    protected $map = [];
 
     public function __construct(int $n = 3)
     {
         $this->initMap($n);
+    }
+
+    public function getMap()
+    {
+        return $this->map;
     }
 
     public function initMap(int $n)
@@ -29,7 +34,7 @@ class Tictac
     public function putCross(int $i, int $j)
     {
         if ($this->available($i, $j)) {
-            $this->map[$i][$j] = "<img src='cross.png'>";
+            $this->map[$i][$j] = 1;
         }
         return $this;
     }
@@ -37,22 +42,59 @@ class Tictac
     public function putNull(int $i, int $j)
     {
         if ($this->available($i, $j)) {
-            $this->map[$i][$j] = "<img src='null.png'>";
+            $this->map[$i][$j] = 0;
         }
         return $this;
     }
 
-    public function putRand(int $n)
+    private function transpose($array)
     {
-        $i = rand(0, $n);
-        $j = rand(0, $n);
-
-        if ($this->available($i, $j)) {
-            $this->map[$i][$j] = "<img src='null.png'>";
-
-            return $this;
-        }
+        return array_map(null, ...$array);
     }
+
+    private function checWinByRow($map)
+    {
+        foreach ($map as $row) {
+            $winner = $row[0];
+            for ($i = 1; $i < count($row); $i++) {
+                if ($row[$i] !== $row[$i - 1]) {
+                    $winner = null;
+                }
+            }
+            if ($winner !== null) {
+                return $winner;
+            }
+        }
+        return null;
+    }
+
+    public function checWin()
+    {
+        if (($winner = $this->checWinByRow($this->map)) !== null) {
+            return $winner;
+        }
+        if (($winner = $this->checWinByCol()) !== null) {
+            return $winner;
+        }
+        return null;
+    }
+
+    public function checWinByCol()
+    {
+        return $this->checWinByRow($this->transpose($this->map));
+    }
+
+    // public function putRand(int $n)
+    // {
+    //     $i = rand(0, $n);
+    //     $j = rand(0, $n);
+
+    //     if ($this->available($i, $j)) {
+    //         $this->map[$i][$j] = "<img src='null.png'>";
+
+    //         return $this;
+    //     }
+    // }
 
     public function available(int $i, int $j): bool
     {
