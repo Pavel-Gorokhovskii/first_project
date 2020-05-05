@@ -10,7 +10,7 @@ abstract class Li extends PairTag
         $this->data = '';
 
         foreach ($data as $value) {
-            $this->data .= "\t<li>$value</li>\n";
+            $this->data .= "<li>$value</li>";
         }
         return $this;
     }
@@ -18,13 +18,13 @@ abstract class Li extends PairTag
     public function setType(string $type)
     {
         if (in_array($type, $this->avalibleType)) {
-            $this->type = $type;
+            $this->type = " type='$type'";
         }
         return $this;
     }
 
     public function html()
     {
-        return "\n<$this->tagName type = '$this->type' $this->class $this->style id = '$this->id'>\n$this->data</$this->tagName>\n";
+        return "<$this->tagName$this->type$this->class$this->style$this->id>$this->data</$this->tagName>";
     }
 }

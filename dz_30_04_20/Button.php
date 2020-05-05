@@ -7,13 +7,13 @@ class Button extends Name
 
     public function setType(string $type)
     {
-        $this->type = $type;
+        $this->type = " type='$type'";
         return $this;
     }
 
     public function html()
     {
-        return "<button type='$this->type' name='$this->name'>
-        $this->innerText</button> ";
+        return "<button$this->type$this->name>"
+            . "$this->innerText</button>";
     }
 }

@@ -3,12 +3,12 @@
 class Form extends PairTag
 {
     private $action;
-    private $method = "GET";
+    private $method = " method='GET'";
     private $content;
 
     public function setAction(string $action)
     {
-        $this->action = $action;
+        $this->action = " action='$action'";
         return $this;
     }
 
@@ -27,7 +27,7 @@ class Form extends PairTag
     public function setMethod($method)
     {
         if (in_array($method, ["POST", "GET"])) {
-            $this->method = $method;
+            $this->method = " method='$method'";
         }
         return $this;
     }
@@ -35,6 +35,6 @@ class Form extends PairTag
 
     public function html()
     {
-        return "<form action='$this->action' method='$this->method'>\n$this->content</form>";
+        return "<form$this->action$this->method>$this->content</form>";
     }
 }

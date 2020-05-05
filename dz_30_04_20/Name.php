@@ -7,7 +7,7 @@ abstract class Name extends PairTag
 
     public function setName(string $name)
     {
-        $this->name = $name;
+        $this->name = " name='$name'";
         return $this;
     }
 }

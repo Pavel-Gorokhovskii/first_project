@@ -9,7 +9,7 @@ class Select extends Name
         $this->selectData = "";
 
         foreach ($selectData as $key => $value) {
-            $this->selectData .= "\t<option value='$key'>$value</option>\n";
+            $this->selectData .= "<option value='$key'>$value</option>";
         }
 
         return $this;
@@ -17,6 +17,6 @@ class Select extends Name
 
     public function html()
     {
-        return "<select id='$this->id' name='$this->name'>\n$this->selectData</select>\n";
+        return "<select$this->id$this->name>$this->selectData</select>";
     }
 }

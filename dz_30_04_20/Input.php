@@ -2,7 +2,7 @@
 class Input extends Tag
 {
     protected $value = '';
-    protected $type = 'text';
+    protected $type = " type='text'";
     protected $name;
 
     public function setType(string $type)
@@ -15,14 +15,14 @@ class Input extends Tag
             'file',
             'checkbox'
         ])) {
-            $this->type = $type;
+            $this->type = " type='$type'";
         }
         return $this;
     }
 
     public function setValue(string $value)
     {
-        $this->value = $value;
+        $this->value = " value='$value'";
         return $this;
     }
 
@@ -36,13 +36,13 @@ class Input extends Tag
 
     public function setName(string $name)
     {
-        $this->name = $name;
+        $this->name = " name='$name'";
         return $this;
     }
 
 
     public function html()
     {
-        return "<input type = '$this->type' name = '$this->name' value = '$this->value'>";
+        return "<input$this->type$this->name$this->value>";
     }
 }

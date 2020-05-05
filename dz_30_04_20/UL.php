@@ -1,6 +1,5 @@
 <?php
 
-
 class UL extends Li
 {
     protected $type = "circle";

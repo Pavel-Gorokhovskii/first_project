@@ -1,10 +1,10 @@
 <?php
 
-class Br extends Tag
+class Br
 {
 
     public function html()
     {
-        return "<br$this->id$this->class$this->style>";
+        return "<br>";
     }
 }

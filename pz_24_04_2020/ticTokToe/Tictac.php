@@ -2,10 +2,11 @@
 
 class Tictac
 {
-    protected $map = [];
+    public $map = [];
 
     public function __construct(int $n = 3)
     {
+        $this->n = $n;
         $this->initMap($n);
     }
 
@@ -47,6 +48,30 @@ class Tictac
         return $this;
     }
 
+    public function putRandCross()
+    {
+        $i = rand(0, ($this->n - 1));
+        $j = rand(0, ($this->n - 1));
+
+        if ($this->available($i, $j)) {
+            $this->map[$i][$j] = 1;
+
+            return $this;
+        }
+    }
+
+    public function putRandNull()
+    {
+        $i = rand(0, ($this->n - 1));
+        $j = rand(0, ($this->n - 1));
+
+        if ($this->available($i, $j)) {
+            $this->map[$i][$j] = 0;
+
+            return $this;
+        }
+    }
+
     private function transpose($array)
     {
         return array_map(null, ...$array);
@@ -76,6 +101,14 @@ class Tictac
         if (($winner = $this->checWinByCol()) !== null) {
             return $winner;
         }
+
+        if (($winner = $this->checWinByMainDiag($this->map)) !== null) {
+            return $winner;
+        }
+
+        if (($winner = $this->checWinBySecondDiag($this->map)) !== null) {
+            return $winner;
+        }
         return null;
     }
 
@@ -84,17 +117,48 @@ class Tictac
         return $this->checWinByRow($this->transpose($this->map));
     }
 
-    // public function putRand(int $n)
-    // {
-    //     $i = rand(0, $n);
-    //     $j = rand(0, $n);
 
-    //     if ($this->available($i, $j)) {
-    //         $this->map[$i][$j] = "<img src='null.png'>";
+    public function checWinByMainDiag(array $map)
+    {
+        $winner = $map[0][0];
 
-    //         return $this;
-    //     }
-    // }
+        for ($i = 0; $i < count($map[$i]); $i++) {
+
+            for ($j = 0; $j < count($map[$i]); $j++) {
+
+                if ($i = $j && $map[$i][$j] !== null) {
+
+                    if ($winner === $map[$i][$j]) {
+                        return $winner;
+                    }
+                }
+            }
+            return null;
+        }
+    }
+
+
+    public function checWinBySecondDiag(array $map)
+    {
+
+        $winner = $map[0][2];
+
+        for ($i = 0; $i < count($map[$i]); $i++) {
+            for ($j = 0; $j < count($map[$i]); $j++) {
+
+                if (($j === (count($map[$i]) - 1) && $i == 0) ||
+                    ($i = $j && $map[$i][$j] !== null) ||
+                    ($i === (count($map[$i]) - 1) && $j == 0)
+                ) {
+
+                    if ($winner === $map[$i][$j]) {
+                        return $winner;
+                    }
+                }
+            }
+            return null;
+        }
+    }
 
     public function available(int $i, int $j): bool
     {

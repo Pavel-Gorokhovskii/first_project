@@ -19,7 +19,6 @@ class H extends PairTag
 
     public function html()
     {
-        return "<h$this->level id='$this->id' class='$this->class' 
-        style='$this->style'>$this->innerText</h$this->level>";
+        return "<h$this->level$this->id$this->class$this->style>$this->innerText</h$this->level>";
     }
 }

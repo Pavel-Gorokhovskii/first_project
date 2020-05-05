@@ -1,6 +1,6 @@
 <?php
 
-class Hr extends Tag
+class Hr
 {
 
     private $color;
@@ -10,7 +10,7 @@ class Hr extends Tag
     public function setColor(string $color)
     {
 
-        $this->color = $color;
+        $this->color = " color='$color'";
 
         return $this;
     }
@@ -18,7 +18,7 @@ class Hr extends Tag
     public function setSize(int $size)
     {
 
-        $this->size = $size;
+        $this->size = " size='$size'";
 
         return $this;
     }
@@ -26,13 +26,13 @@ class Hr extends Tag
     public function setWidth(int $width)
     {
 
-        $this->width = $width;
+        $this->width = " width='$width'";
 
         return $this;
     }
 
     public function html()
     {
-        return "<hr color='$this->color' size='$this->size' width='$this->width'>";
+        return "<hr$this->color$this->size$this->width>";
     }
 }
