@@ -4,24 +4,30 @@ class Area
 {
     private $map;
 
+    private $style = " style = 'border: 1px solid black'";
+    private $class = " class = 'tictac'";
+
     public function setMap(array $map)
     {
         $this->map = $map;
         return $this;
     }
 
-    public function style(string $border, string $width, string $height): self
+    public function style(string $style): self
     {
-        $this->border = $border;
-        $this->width = $width;
-        $this->height = $height;
-        $this->style = " style='border: $this->border; width: $this->width; height:$this->height' align='center'";
+        $this->style = $style;
+        return $this;
+    }
+
+    public function class(string $class): self
+    {
+        $this->class = $class;
         return $this;
     }
 
     public function html()
     {
-        $str = "<table>";
+        $str = "<table$this->style$this->class>";
 
         foreach ($this->map  as $value) {
             $str .= "<tr>";

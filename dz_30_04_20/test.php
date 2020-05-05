@@ -2,17 +2,38 @@
 
 include 'autoload.php';
 
-function test($str1, $str2, $text = '')
-{
-    if ($str1 === $str2) {
-        echo "Тест $text пройден\n";
-    } else {
-        echo "Тест $text не пройден\n $str1 == $str2\n";
-    }
-}
+// function test($str1, $str2, $text = '')
+// {
+//     if ($str1 === $str2) {
+//         echo "Тест $text пройден\n";
+//     } else {
+//         echo "Тест $text не пройден\n $str1 == $str2\n";
+//     }
+// }
 
 
 //**************
+
+function test($expected, $actual, $text = '')
+{
+    if ($expected === $actual) {
+        echo "\033[32m";   // Red Color
+        echo "Тест $text пройден\n";
+        echo "\033[37m";
+    } else {
+        echo "\033[31m";   // Red Color
+        echo "Тест $text не пройден\n";
+        echo "\033[37m";
+
+        echo "expected:\n";
+        print_r($expected);
+        echo "\n";
+
+        echo "actual:\n";
+        print_r($actual);
+        echo "\n";
+    }
+}
 
 
 $img = new Img();
