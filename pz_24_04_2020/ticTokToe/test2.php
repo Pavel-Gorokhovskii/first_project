@@ -20,20 +20,16 @@
 
     include 'autoload.php';
 
-    $ai = new Ai();
+    $ai = new Ai(3);
 
-    $ai
-        ->initMap(3)
-        ->putRandCross()
-        ->putRandNull()
-        ->putRandCross()
-        ->putRandNull()
-        ->putRandCross()
-        ->putRandNull()
-        ->putRandCross()
-        ->putRandNull()
-        ->putRandCross()
-        ->getMap();
+    $ai->selfGaming();
+    if ($ai->checWin() === 1) {
+        echo 'Выиграли крестики';
+    } elseif ($ai->checWin() === 0) {
+        echo 'Выиграли нолики';
+    } else {
+        echo 'Ничья';
+    }
 
     $area = new Area();
 
