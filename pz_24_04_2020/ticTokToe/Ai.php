@@ -1,14 +1,16 @@
 <?php
 
 /**
- * Искуственный интелект для игры в крестики нолики 
+ * Искусственный интелект для игры в крестики-нолики
  */
 class Ai extends Tictac
 {
     private $moves = [];
+
     private function putRand(string $method)
     {
         if ($this->checWin() === null) {
+
             $this->searchEmptyCells();
 
             if (count($this->moves) > 1) {
@@ -18,22 +20,32 @@ class Ai extends Tictac
             }
 
             if (!empty($move)) {
-                $this->$method($move["i"], $move["j"]);
+                $this->{$method}($move['i'], $move['j']);
             }
         }
         return $this;
     }
 
+
+    /**
+     * Случайный ход крестиком
+     */
     public function putRandCross()
     {
-        return $this->putRand("putCross");
+        return $this->putRand('putCross');
     }
 
+    /**
+     * Случайный ход ноликом
+     */
     public function putRandNull()
     {
-        return $this->putRand("putNull");;
+        return $this->putRand('putNull');
     }
 
+    /**
+     * Поиск свободных ячеек
+     */
     public function searchEmptyCells()
     {
         $this->moves = [];
@@ -45,8 +57,9 @@ class Ai extends Tictac
             }
         }
     }
+
     /**
-     *  Игра компьетра самого с собой
+     * Игра компьютера самого с собой
      */
     public function selfGaming()
     {

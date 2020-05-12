@@ -8,7 +8,7 @@ class TestClass
     {
         print_r(
             $saver
-                ->save([])
+                ->save(['a', 'b', 'c'])
                 ->load()
         );
     }

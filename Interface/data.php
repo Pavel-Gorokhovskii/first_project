@@ -1,5 +1,5 @@
-<?php return array (
-  0 => 1,
-  1 => 2,
-  2 => 3,
+<?php return array(
+  'a' => 6,
+  'b' => 7,
+  'c' => 8,
 );

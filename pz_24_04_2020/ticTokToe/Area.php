@@ -4,7 +4,7 @@ class Area
 {
     private $map;
 
-    private $style = " style = 'border: 1px solid black'";
+    private $style = " style='border: 1px black solid'";
     private $class = " class = 'tictac'";
 
     public function setMap(array $map)
@@ -29,16 +29,16 @@ class Area
     {
         $str = "<table$this->style$this->class>";
 
-        foreach ($this->map  as $value) {
+        foreach ($this->map  as $i => $value) {
             $str .= "<tr>";
-            foreach ($value  as $cell) {
+            foreach ($value  as $j => $cell) {
                 $mark = '';
                 if ($cell === 1) {
                     $mark = "<img src='cross.png'>";
                 } else if ($cell === 0) {
                     $mark = "<img src='null.png'>";
                 }
-                $str .= "<td$this->style>$mark</td>";
+                $str .= "<td$this->style><a href='test2.php?i=$i&j=$j'>$mark</a></td>";
             }
             $str .= "</tr>";
         }
