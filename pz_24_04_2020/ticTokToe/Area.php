@@ -27,22 +27,22 @@ class Area
 
     public function html()
     {
-        $str = "<table$this->style$this->class>";
+        $str = "<table$this->style$this->class>\n";
 
         foreach ($this->map  as $i => $value) {
-            $str .= "<tr>";
+            $str .= "\t<tr>\n";
             foreach ($value  as $j => $cell) {
-                $mark = '';
+                $mark = "<a href='?action=shot&i=$i&j=$j'> </a>";
                 if ($cell === 1) {
                     $mark = "<img src='cross.png'>";
                 } else if ($cell === 0) {
                     $mark = "<img src='null.png'>";
                 }
-                $str .= "<td$this->style><a href='test2.php?i=$i&j=$j'>$mark</a></td>";
+                $str .= "\t\t<td$this->style>$mark</td>\n";
             }
-            $str .= "</tr>";
+            $str .= "\t</tr>\n";
         }
-        $str .= "</table>";
+        $str .= "</table>\n";
 
 
         return $str;

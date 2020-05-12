@@ -10,6 +10,6 @@ class SessionSaver extends File implements FileInterface
 
     public function load(): array
     {
-        return  $_SESSION[$this->fileName];
+        return (array) $_SESSION[$this->fileName];
     }
 }
