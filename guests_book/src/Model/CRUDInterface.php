@@ -1,6 +1,6 @@
 <?php
 
-namespace W1019;
+namespace Model;
 
 interface CRUDInterface
 {
