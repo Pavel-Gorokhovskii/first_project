@@ -1,6 +1,6 @@
 <?php
 
-trait MultiplayerTrait
+trait MultiplyerTrait
 {
 
     public function mul($a, $b)

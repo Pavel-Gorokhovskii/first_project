@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Model;
+namespace APP\Model;
 
 class Class1
 {
     public function hello()
     {
-        return "hello Model\n";
+        return "hello model\n";
     }
 }
