@@ -39,7 +39,10 @@ class View
 
     public function body()
     {
-        extract($this->data);
+        if (is_array($this->data)) {
+            extract($this->data);
+        }
+
         include "$this->path$this->template.php";
     }
 }

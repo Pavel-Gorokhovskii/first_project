@@ -7,7 +7,7 @@ interface CRUDInterface
     /**
      * read 
      */
-    public function get(): array;
+    public function get(int $id = null): array;
 
     /**
      * create
